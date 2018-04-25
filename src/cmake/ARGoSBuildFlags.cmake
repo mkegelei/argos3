@@ -9,14 +9,14 @@ execute_process(
 #
 # General compilation flags
 #
-set(CMAKE_C_FLAGS                  "-Wall")
+set(CMAKE_C_FLAGS                  "${CMAKE_C_FLAGS} -Wall -std=c++11")
 if(ARGOS_BUILD_NATIVE)
   set(CMAKE_C_FLAGS                "${CMAKE_C_FLAGS} -mtune=native -march=native")
 endif(ARGOS_BUILD_NATIVE)
 set(CMAKE_C_FLAGS_RELEASE          "-Os -DNDEBUG")
 set(CMAKE_C_FLAGS_DEBUG            "-ggdb3")
 set(CMAKE_C_FLAGS_RELWITHDEBINFO   "${CMAKE_C_FLAGS_DEBUG} ${CMAKE_C_FLAGS_RELEASE}")
-set(CMAKE_CXX_FLAGS                "-Wall")
+set(CMAKE_CXX_FLAGS                "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
 if(ARGOS_BUILD_NATIVE)
   set(CMAKE_CXX_FLAGS              "${CMAKE_CXX_FLAGS} -mtune=native -march=native")
 endif(ARGOS_BUILD_NATIVE)
